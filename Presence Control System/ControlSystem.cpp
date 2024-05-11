@@ -6,7 +6,7 @@ const std::shared_ptr<Registration>& ControlSystem::getRegistration() const { re
 void ControlSystem::setEmployee(const Employee& employee) { m_employee = std::make_shared<Employee>(employee); }
 void ControlSystem::setRegistration(const Registration & registration) { m_registration = std::make_shared<Registration>(registration); }
 
-void ControlSystem::recordingInSystem(Employee employee, Registration registration) { 
+void ControlSystem::recordingInSystem(const Employee employee, const Registration registration) { 
 	setEmployee(employee);
 	setRegistration(registration);
 }

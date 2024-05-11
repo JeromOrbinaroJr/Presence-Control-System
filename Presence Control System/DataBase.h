@@ -1,5 +1,4 @@
-#include "RegistrationPassage.h"
-#include "Employee.h"
+#pragma once
 #include "ControlSystem.h"
 
 ControlSystem controlSystem;

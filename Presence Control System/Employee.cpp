@@ -3,7 +3,7 @@
 //Constructor 
 Employee::Employee() {}
 
-Employee::Employee(const std::string& lastName, const std::string& fistName, const std::string& postEmployee, const int& idEmployee) :
+Employee::Employee(const std::string& lastName, const std::string& fistName, const std::string& postEmployee, const std::string& idEmployee) :
 	m_lastName(lastName), m_firstName(fistName), m_postEmployee(postEmployee), m_idEmployee(idEmployee) {}
 
 //Destructor
