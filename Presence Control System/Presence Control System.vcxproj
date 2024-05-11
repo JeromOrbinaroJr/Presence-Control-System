@@ -127,10 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ControlSystem.cpp" />
+    <ClCompile Include="DataBase.h" />
+    <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="Employee.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RegistrationPassage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ControlSystem.h" />
     <ClInclude Include="RegistrationPassage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

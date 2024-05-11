@@ -1,13 +1,14 @@
 #include "RegistrationPassage.h"
 #pragma warning(disable:4996)
 
-Registration::Registration() { date = std::chrono::system_clock::now(); }
+Registration::Registration() { m_date = std::chrono::system_clock::now(); }
+Registration::~Registration() { }
 
-void Registration::setArrivalTime() { arrivalTime = std::chrono::system_clock::now(); }
-void Registration::setDepartureTime() { departureTime = std::chrono::system_clock::now(); }
-std::chrono::system_clock::time_point Registration::getDate() const { return date; }
-std::chrono::time_point<std::chrono::system_clock> Registration::getArrivalTime() const { return arrivalTime; }
-std::chrono::time_point<std::chrono::system_clock> Registration::getDepartureTime() const { return departureTime; }
+void Registration::setArrivalTime() { m_arrivalTime = std::chrono::system_clock::now(); }
+void Registration::setDepartureTime() { m_departureTime = std::chrono::system_clock::now(); }
+std::chrono::system_clock::time_point Registration::getDate() const { return m_date; }
+std::chrono::time_point<std::chrono::system_clock> Registration::getArrivalTime() const { return m_arrivalTime; }
+std::chrono::time_point<std::chrono::system_clock> Registration::getDepartureTime() const { return m_departureTime; }
 
 std::string timeToString(const std::chrono::system_clock::time_point& tp) {
     std::time_t time = std::chrono::system_clock::to_time_t(tp);
