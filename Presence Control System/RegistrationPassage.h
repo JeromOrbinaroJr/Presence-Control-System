@@ -3,22 +3,31 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
+#pragma warning(disable:4996)
 
 class Registration {
 public:
-	Registration();
+    // Constructor
+    Registration(const std::string& employeeId);
 
-	~Registration();
+    // Destructor
+    ~Registration();
 
-	void setArrivalTime();
-	void setDepartureTime();
+    // Getters
+    std::string getEmployeeId() const;
     std::chrono::system_clock::time_point getDate() const;
-    std::chrono::time_point<std::chrono::system_clock> getArrivalTime() const;
-	std::chrono::time_point<std::chrono::system_clock> getDepartureTime() const;
-	friend std::ostream& operator<<(std::ostream& os, const Registration& reg);
+    std::chrono::system_clock::time_point getArrivalTime() const;
+    std::chrono::system_clock::time_point getDepartureTime() const;
+
+    // Setters
+    void setArrivalTime();
+    void setDepartureTime();
+
+    friend std::ostream& operator<<(std::ostream& os, const Registration& reg);
 
 private:
-	std::chrono::time_point<std::chrono::system_clock> m_arrivalTime;
-	std::chrono::time_point<std::chrono::system_clock> m_departureTime;
-	std::chrono::system_clock::time_point m_date;
+    std::string m_employeeId;
+    std::chrono::system_clock::time_point m_date;
+    std::chrono::system_clock::time_point m_arrivalTime;
+    std::chrono::system_clock::time_point m_departureTime;
 };

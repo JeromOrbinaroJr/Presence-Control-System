@@ -1,12 +1,29 @@
 #include "ControlSystem.h"
 
-const std::shared_ptr<Employee>& ControlSystem::getEmployee() const { return m_employee; }
-const std::shared_ptr<Registration>& ControlSystem::getRegistration() const { return m_registration; }
+void ControlSystem::registerEmployee(const Employee& employee) {
+    m_employees[employee.getIdEmployee()] = employee;
+}
 
-void ControlSystem::setEmployee(const Employee& employee) { m_employee = std::make_shared<Employee>(employee); }
-void ControlSystem::setRegistration(const Registration & registration) { m_registration = std::make_shared<Registration>(registration); }
+void ControlSystem::addWorkPeriod(const std::string& employeeId, const std::chrono::system_clock::time_point& date, const WorkPeriod& period) {
+    m_schedule.addWorkPeriod(employeeId, date, period);
+}
 
-void ControlSystem::recordingInSystem(const Employee employee, const Registration registration) { 
-	setEmployee(employee);
-	setRegistration(registration);
+void ControlSystem::registerArrival(const std::string& employeeId) {
+    if (m_employees.find(employeeId) != m_employees.end()) {
+        Registration reg(employeeId);
+        reg.setArrivalTime  ();
+        m_registrations[employeeId].push_back(reg);
+    }
+}
+
+void ControlSystem::registerDeparture(const std::string& employeeId) {
+    if (m_employees.find(employeeId) != m_employees.end() && !m_registrations[employeeId].empty()) {
+        auto& reg = m_registrations[employeeId].back();
+        reg.setDepartureTime();
+    }
+}
+
+std::map<std::string, Employee> ControlSystem::getEmployees() const
+{
+    return std::map<std::string, Employee>();
 }

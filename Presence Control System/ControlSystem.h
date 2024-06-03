@@ -1,19 +1,34 @@
 #pragma once
-#include <memory>
 #include "Employee.h"
 #include "RegistrationPassage.h"
+#include "Schedule.h"
+#include <map>
+#include <vector>
+#include <string>
+#include <chrono>
+#pragma warning(disable:4996)
 
-struct ControlSystem {
+class ControlSystem {
 public:
-    const std::shared_ptr<Employee>& getEmployee() const;
-    const std::shared_ptr<Registration>& getRegistration() const;
+    // Register a new employee
+    void registerEmployee(const Employee& employee);
 
-    void setEmployee(const Employee& employee);
-    void setRegistration(const Registration& registration);
+    // Add work period for an employee
+    void addWorkPeriod(const std::string& employeeId, const std::chrono::system_clock::time_point& date, const WorkPeriod& period);
 
-    void recordingInSystem(Employee employee, Registration registretion);
+    // Register employee arrival
+    void registerArrival(const std::string& employeeId);
+
+    // Register employee departure
+    void registerDeparture(const std::string& employeeId);
+
+    std::map<std::string, Employee> getEmployees() const;
+
+    // Check for schedule violations
+
 
 private:
-    std::shared_ptr<Employee> m_employee;
-    std::shared_ptr<Registration> m_registration;
+    std::map<std::string, Employee> m_employees; // Employee ID to Employee object
+    Schedule m_schedule; // Schedule management
+    std::map<std::string, std::vector<Registration>> m_registrations; // Employee ID to vector of Registrations
 };
