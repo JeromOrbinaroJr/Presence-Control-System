@@ -133,13 +133,13 @@
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="Employee.h" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="RegistrationPassage.cpp" />
+    <ClCompile Include="Registration.cpp" />
     <ClCompile Include="Schedule.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ControlSystem.h" />
     <ClInclude Include="DataBaseEmployees.h" />
-    <ClInclude Include="RegistrationPassage.h" />
+    <ClInclude Include="Registration.h" />
     <ClInclude Include="Schedule.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

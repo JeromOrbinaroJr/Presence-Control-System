@@ -1,6 +1,6 @@
 #include "Employee.h"
 #include "DataBaseEmployees.h"
-#include "RegistrationPassage.h"
+#include "Registration.h"
 #include <iostream>
 
 int main() {

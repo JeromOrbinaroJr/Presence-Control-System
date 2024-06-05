@@ -18,7 +18,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="RegistrationPassage.cpp">
+    <ClCompile Include="Registration.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Employee.h">
@@ -38,7 +38,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="RegistrationPassage.h">
+    <ClInclude Include="Registration.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="ControlSystem.h">

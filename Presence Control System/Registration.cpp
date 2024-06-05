@@ -1,4 +1,4 @@
-#include "RegistrationPassage.h"
+#include "Registration.h"
 
 //Constructor
 Registration::Registration(const std::string& employeeId) :
