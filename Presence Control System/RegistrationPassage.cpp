@@ -31,6 +31,7 @@ void Registration::setDepartureTime() {
     m_departureTime = std::chrono::system_clock::now();
 }
 
+//Methods
 std::string timeToString(const std::chrono::system_clock::time_point& tp) {
     std::time_t time = std::chrono::system_clock::to_time_t(tp);
     std::tm tm = *std::localtime(&time);
@@ -39,6 +40,7 @@ std::string timeToString(const std::chrono::system_clock::time_point& tp) {
     return oss.str();
 }
 
+//OperatorOverloading
 std::ostream& operator<<(std::ostream& os, const Registration& reg) {
     std::time_t now_time = std::chrono::system_clock::to_time_t(reg.getDate());
     std::tm* time_info = std::localtime(&now_time);

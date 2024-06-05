@@ -11,10 +11,10 @@ Employee::~Employee() {}
 
 //Getters
 int Employee::getKey() const { return m_key; }
-std::string Employee::getLastName() const { return m_lastName; }
-std::string Employee::getFirstName() const { return m_firstName; }
-std::string Employee::getPostEmployee() const { return m_postEmployee; }
-std::string Employee::getIdEmployee() const { return m_idEmployee; }
+const std::string& Employee::getLastName() const { return m_lastName; }
+const std::string& Employee::getFirstName() const { return m_firstName; }
+const std::string& Employee::getPostEmployee() const { return m_postEmployee; }
+const std::string& Employee::getIdEmployee() const { return m_idEmployee; }
 
 //Setters
 void Employee::setKey(const int key) { m_key = key; }

@@ -2,19 +2,23 @@
 
 class Employee {
 public:
-	//Constructor
+	//Constructors
 	Employee();
-	Employee(const int key, const std::string& lastName, const std::string& firstName, const std::string& postEmployee, const std::string& id);
+	Employee(const int key, 
+		const std::string& lastName,
+		const std::string& firstName,
+		const std::string& postEmployee,
+		const std::string& id);
 
 	//Destructor
 	~Employee();
 
 	//Getters
 	int getKey() const;
-	std::string getLastName() const;
-	std::string getFirstName() const;
-	std::string getPostEmployee() const;
-	std::string getIdEmployee() const;
+	const std::string& getLastName() const;
+	const std::string& getFirstName() const;
+	const std::string& getPostEmployee() const;
+	const std::string& getIdEmployee() const;
 
 	//Setters
 	void setKey(const int key);
@@ -24,7 +28,7 @@ public:
 	void setIdEmployee(const std::string& idEmployee);
 
 private:
-	int m_key{0};
+	int m_key{ 0 };
 	std::string m_lastName;
 	std::string m_firstName;
 	std::string m_postEmployee;

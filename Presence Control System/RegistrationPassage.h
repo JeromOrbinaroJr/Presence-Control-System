@@ -3,6 +3,7 @@
 #include <iostream>
 #include <iomanip>
 #include <sstream>
+#include "Employee.h"
 #pragma warning(disable:4996)
 
 class Registration {
@@ -23,6 +24,7 @@ public:
     void setArrivalTime();
     void setDepartureTime();
 
+    //OperatorOverloading
     friend std::ostream& operator<<(std::ostream& os, const Registration& reg);
 
 private:
